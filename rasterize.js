@@ -12,6 +12,7 @@ var rowTiles = [0,1, 1, 1, 1,0,2, 2, 2, 2, 2,0];
 var audioStart = new Audio('start.mp3');
 var audioJump = new Audio('jump.mp3');
 var audioEnd = new Audio('end.mp3');
+var audioWin= new Audio('win.mp3');
 function cameraSetup() {
     orthographicCamera = new THREE.OrthographicCamera(width / -2, width / 2, height / 2, height /
         -2, 1, 2000);
@@ -444,7 +445,7 @@ function drawScene() {
   }
   if(frogWon) {
     document.getElementById('score').innerHTML = parseInt(document.getElementById('score').innerHTML) + 1;
-    audioEnd.play(); alert('You win'); reset();
+    audioWin.play(); alert('You win'); reset();
   }
   moveCars();
   moveLogs();
